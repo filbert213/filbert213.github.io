@@ -1,0 +1,441 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* Variables CSS */
+:root {
+  /* Colors */
+  --first-hue: 215;
+  --second-hue: 215;
+  --first-color: hsl(var(--first-hue), 91%, 64%);
+  --first-color-dark: hsl(var(--first-hue), 62%, 20%);
+  --title-color: hsl(var(--second-hue), 8%, 85%);
+  --text-color: hsl(var(--second-hue), 8%, 75%);
+  --body-color: hsl(var(--second-hue), 28%, 12%);
+  --container-color: hsl(var(--second-hue), 28%, 15%);
+  --white-color: hsl(var(--second-hue), 8%, 100%);
+
+  --first-gradient: linear-gradient(
+    150deg,
+    var(--first-color) 0%,
+    var(--white-color) 100%
+  );
+  --second-gradient: linear-gradient(
+    260deg,
+    var(--first-color-dark) 0%,
+    var(--first-color) 100%
+  );
+
+  /* Font Family */
+  --body-font: 'Space Grotesk', sans-serif;
+
+  /* Font Sizes */
+  --big-font-size: 8rem;
+  --h1-font-size: 3.75rem;
+  --h2-font-size: 3rem;
+  --h3-font-size: 1.5rem;
+  --larger-font-size: 1.25rem;
+  --large-font-size: 1.125rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+
+  /* Font Weight */
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+}
+
+/* Responsive Typography */
+@media screen and (max-width: 1208px) {
+}
+
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+  line-height: 1.2;
+}
+
+p {
+  line-height: 1.75;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Variables Dark theme */
+
+/* 
+    Color changes in some parts of 
+    the website, in light theme
+*/
+
+/* Reusable CSS Classes */
+.section {
+    padding-block: 6rem 4rem;
+}
+
+.button {
+    display: inline-flex;
+    background: var(--second-gradient);
+    color: var(--white-color);
+    padding: 1.25rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: var(--font-semi-bold);
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background: linear-gradient(
+        260deg,
+        var(--first-color) 0%,
+        var(--first-color-dark) 100%
+    );
+}
+
+.section-title {
+    text-align: center;
+    font-size: var(--h1-font-size);
+    margin-bottom: 4.25rem;
+}
+
+/* Layout */
+.container {
+    max-width: 1320px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+}
+
+.grid {
+    display: grid;
+}
+
+/* Header & Nav */
+.header {
+    background-color: #151d27;
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 1000;
+}
+
+.nav,
+.nav-list,
+.nav-btns {
+    display: flex;
+}
+
+.nav {
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 3rem;
+    height: 4.5rem;
+}
+
+.nav-logo,
+.nav-link,
+.change-theme {
+    color: var(--title-color);
+}
+
+.nav-logo {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-bold);
+}
+
+.nav-menu {
+    margin-left: auto;
+}
+
+.nav-list {
+    column-gap: 2.75rem;
+}
+
+.nav-link {
+    font-weight: var(--font-medium);
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+color: var(--first-color);
+}
+
+.change-theme {
+font-size: 1.25rem;
+}
+
+.nav-btns {
+align-items: center;
+column-gap: 1rem;
+}
+
+.nav-close,
+.nav-toggle {
+display: none;
+}
+
+/* Active Link */
+
+/* Change Background Header */
+
+/* Home */
+.home-container {
+    grid-template-columns: 1fr repeat(2, max-content);
+    align-items: center;
+    column-gap: 3rem;
+    padding-top: 6rem;
+}
+
+.home-title {
+    font-size: var(--big-font-size);
+    line-height: 1;
+    margin-bottom: 2rem;
+}
+
+.home-job {
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-semi-bold);
+}
+
+.home-description {
+    font-size: var(--larger-font-size);
+    margin-block: 1.5rem 2rem;
+}
+
+.home-img-wrapper {
+    width: 38rem;
+    background: var(--second-gradient);
+    border-radius: 66% 34% 61% 39% / 41% 53% 47% 59%;
+    overflow: hidden;
+}
+
+.home-social {
+    row-gap: 1rem;
+}
+
+.home-social-link {
+    color: var(--title-color);
+    font-size: var(--larger-font-size);
+    transition: color 0.3s;
+}
+
+.home-social-link:hover {
+    color: var(--first-color);
+}
+
+/* About */
+.about-container {
+    grid-template-columns: 3fr 6fr 2fr;
+    align-items: center;
+    column-gap: 4rem;
+}
+
+.about-experience {
+    width: 280px;
+    height: 420px;
+    background: var(--second-gradient);
+    border-radius: 1rem;
+    display: grid;
+    place-content: center;
+}
+
+.about-no,
+.about-title {
+    color: var(--white-color);
+}
+
+.about-no {
+    font-size: 7.5rem;
+    font-weight: var(--font-bold);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.about-title {
+    font-size: var(--large-font-size);
+    text-align: center;
+}
+
+.about-description {
+    font-size: var(--h2-font-size);
+    margin-bottom: 2rem;
+}
+
+.text-gradient {
+    -webkit-text-fill-color: hsla(var(--second-hue), 8%, 85%, 0.2);
+    background: var(--first-gradient);
+    background-clip: text;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+}
+
+.about-data {
+    row-gap: 2rem;
+}
+
+.about-item-no {
+    font-size: var(--h2-font-size);
+    margin-bottom: 0.125rem;
+}
+
+/* Skills */
+.skills-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+}
+
+.skills-card {
+    background: var(--container-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    transition: background 0.3s;
+}
+
+.skills-card:hover {
+    background: var(--second-gradient);
+}
+
+.skills-no {
+    color: var(--title-color);
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-bold);
+}
+
+.skills-title {
+    font-size: var(--h3-font-size);
+    margin-block: 1.25rem 0.75rem;
+}
+
+.skills-description {
+    font-size: var(--large-font-size);
+}
+
+.skills-card:hover :is(.skills-no, .skills-title, .skills-description) {
+    color: var(--white-color);
+}
+
+/* Achievements */
+.pengalaman-berorganisasi {
+    .pengalaman {
+        display: flex;
+        gap: 30px;
+        @media (max-width:1024px) {
+            flex-direction: column;
+        }
+        article {
+            background-color: var(--container-color);
+            padding:30px;
+            border-radius:30px;
+            flex:1;
+            h3 {
+                margin-bottom:15px;
+            }
+            div {
+                font-weight:600;
+                color:var(--first-color);
+                margin-bottom:10px;
+            }
+            p {
+                margin-bottom:10px;
+            }
+            figure {
+                width: 100%;
+                padding-top:56.25%;
+                overflow:hidden;
+                position:relative;
+                border-radius:15px;
+                margin-bottom: 10px;
+                img {
+                    position:absolute;
+                    top:0;
+                    left:0;
+                    height:100%;
+                    object-fit:cover;
+                    transition: ease 5s all;
+                }
+                figcaption {
+                    position:absolute;
+                    bottom:0;
+                    left:0;
+                    right:0;
+                    background-color: rgba(0,0,0,0.5);
+                    color: var(--base-100);
+                    text-align:center;
+                    padding:10px;
+                    opacity:0;
+                    visibility:hidden;
+                    transition: ease 0.3s all;
+                }
+            }
+        }
+        article:hover {
+            background-color: #2c62a4;
+        }
+        article:hover :is(div, p, figure) {
+    color: var(--white-color);
+}
+    }
+}
+
+
+/* Footer */
+
+
+/* For Large Devices */
+@media screen and (max-width: 1208px) {
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 576px) {
+}
+
+/* For small devices */
+@media screen and (max-width: 460px) {
+}
